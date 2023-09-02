@@ -1,4 +1,5 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
+from urllib.parse import urlparse, parse_qs
 import time
 
 # Для начала определим настройки запуска
@@ -307,10 +308,10 @@ class MyServer(BaseHTTPRequestHandler):
                         <div class="card-body">
                             <form>
                                 <div class="mb-3">
-                                    <input type="text" class="form-control" placeholder="Имя" aria-label="First name">
+                                    <input name="name" type="text" class="form-control" placeholder="Имя" aria-label="First name">
                                 </div>
                                 <div class="mb-3">
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                    <input name="email" type="email" class="form-control" id="exampleInputEmail1"
                                            placeholder="E-mail" aria-describedby="emailHelp">
                                 </div>
                                 <button type="submit" class="btn btn-primary form-control">Отправить</button>
@@ -393,6 +394,8 @@ class MyServer(BaseHTTPRequestHandler):
 
     def do_GET(self):
         """ Метод для обработки входящих GET-запросов """
+        query_components = parse_qs(urlparse(self.path).query)
+        print(query_components)
         page_content = self.__get_html_content()
         self.send_response(200)  # Отправка кода ответа
         self.send_header("Content-type", "text/html")  # Отправка типа данных, который будет передаваться
