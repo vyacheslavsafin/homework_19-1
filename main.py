@@ -58,7 +58,7 @@ class MyServer(BaseHTTPRequestHandler):
             height: -webkit-fill-available;
             max-height: 100vh;
             overflow-x: auto;
-            overflow-y: hidden;
+            overflow-y: scroll;
         }
 
         .b-example-divider {
@@ -369,6 +369,62 @@ class MyServer(BaseHTTPRequestHandler):
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th scope="col">№</th>
+                                    <th scope="col">Название товара</th>
+                                    <th scope="col">Цена/шт</th>
+                                    <th scope="col">Количество</th>
+                                    <th scope="col">Итоговая сумма</th>
+                                    <th scope="col">Статус заказа</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Робот-пылесос Miele SLQL0</td>
+                                    <td>29 999</td>
+                                    <td>1</td>
+                                    <td>29 999</td>
+                                    <td class="table-primary">Новый</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Внешний диск SSD Samsung T7 1TB</td>
+                                    <td>9 999</td>
+                                    <td>2</td>
+                                    <td>19 998</td>
+                                    <td class="table-warning">Обработка</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Подписка Яндекс Плюс 12 мес</td>
+                                    <td>1 600</td>
+                                    <td>1</td>
+                                    <td>1 600</td>
+                                    <td class="table-success">Обработан</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>Телевизор Samsung QE55QN85BAU</td>
+                                    <td>119 999</td>
+                                    <td>1</td>
+                                    <td>119 999</td>
+                                    <td class="table-danger">Отменен</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
 
     </div>
